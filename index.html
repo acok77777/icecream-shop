@@ -3,665 +3,589 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>무지개 아이스크림 가게</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#fff7fb;color:#68405c;font-family:"Malgun Gothic",sans-serif}
 button,input{font:inherit}
-button{cursor:pointer;border:0;border-radius:12px;padding:10px 14px;background:#ffb9d2;color:#683b54;font-weight:bold}
+button{cursor:pointer;border:0;border-radius:12px;padding:10px 12px;background:#ffb9d2;color:#683b54;font-weight:bold}
 button:disabled{opacity:.45;cursor:not-allowed}
-header{background:linear-gradient(135deg,#ffd8e8,#e9dcff);padding:20px 14px;text-align:center}
-h1{margin:0 0 10px;font-size:25px}
-header input{width:min(250px,65%);padding:9px;border:1px solid #e5b6d0;border-radius:10px;background:#fff}
-header button{margin-left:5px}
-.stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
-.stat{background:#ffffffd9;border-radius:14px;padding:10px 15px;min-width:105px}
+header{background:linear-gradient(135deg,#ffd8e8,#e9dcff);padding:20px 12px;text-align:center}
+h1{margin:0 0 10px;font-size:24px}
+header input{width:min(240px,62%);padding:9px;border:1px solid #e5b6d0;border-radius:10px}
+.stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px}
+.stat{background:#ffffffdc;border-radius:13px;padding:9px 12px;min-width:95px}
 .stat small{display:block;color:#98758c;margin-bottom:4px}
-.stat strong{font-size:18px}
-main{max-width:1000px;margin:auto;padding:15px}
-.panel{background:#fff;border:2px solid #f4d7e7;border-radius:18px;padding:15px;margin-bottom:15px;box-shadow:0 3px 10px #8e53700c}
+.stat strong{font-size:17px}
+main{max-width:950px;margin:auto;padding:14px}
+.panel{background:white;border:2px solid #f4d7e7;border-radius:17px;padding:14px;margin-bottom:14px}
 h2{font-size:19px;margin:0 0 12px}
-.shop-scene{position:relative;overflow:hidden;min-height:240px;border-radius:16px;background:linear-gradient(#e7f5ff 0 68%,#ffe9cf 68%);display:flex;align-items:flex-end;justify-content:space-around;padding:20px 10px 18px}
-.shop-scene:before{content:"☁️　　　☁️　　　　　☁️";position:absolute;top:14px;left:10px;right:10px;text-align:center;opacity:.8}
-.customer{position:relative;z-index:1;text-align:center;width:43%;min-height:125px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
-.customer-face{font-size:67px;line-height:1.15;filter:drop-shadow(0 3px 1px #0000000b)}
-.customer-name{font-weight:bold;margin-top:5px}
-.customer-order{font-size:13px;margin-top:5px;background:#fff;border-radius:12px;padding:7px;max-width:100%}
-.customer.animal .customer-face{font-size:75px}
-.counter{position:absolute;z-index:0;bottom:0;height:50px;background:#f5b8cf;width:100%;border-top:5px solid #e895b5}
-.dessert-area{position:relative;z-index:2;align-self:flex-end;width:28%;text-align:center;margin-bottom:30px;min-height:110px;display:flex;align-items:flex-end;justify-content:center}
-.dessert{position:relative;min-width:90px;height:100px;display:flex;justify-content:center;align-items:flex-end}
-.scoop-stack{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);width:70px;height:75px}
-.scoop{position:absolute;left:50%;transform:translateX(-50%);width:37px;height:37px;border-radius:50%;border:2px solid #ffffffa8;box-shadow:inset -4px -5px 0 #0000000a,0 2px 3px #00000012}
-.scoop:nth-child(1){bottom:0}
-.scoop:nth-child(2){bottom:25px}
-.scoop:nth-child(3){bottom:48px}
-.scoop:nth-child(4){bottom:70px}
-.cone{position:absolute;bottom:0;width:0;height:0;border-left:25px solid transparent;border-right:25px solid transparent;border-top:58px solid #d99652;filter:drop-shadow(0 2px 1px #a66b36)}
-.cone:after{content:"";position:absolute;top:-51px;left:-17px;width:34px;height:44px;background:repeating-linear-gradient(135deg,transparent 0 7px,#b87939 8px 10px,transparent 11px 16px);opacity:.7}
-.cup{position:absolute;bottom:0;width:58px;height:49px;border-radius:4px 4px 14px 14px;background:#ffacd0;border:3px solid #fff;box-shadow:inset 0 0 0 2px #ef8eb8}
+.shop-scene{position:relative;overflow:hidden;min-height:230px;border-radius:15px;background:linear-gradient(#e7f5ff 0 67%,#ffe9cf 67%);display:flex;align-items:flex-end;justify-content:space-around;padding:22px 7px 16px}
+.shop-scene:before{content:"☁️　　　　☁️　　　　☁️";position:absolute;top:12px;width:100%;text-align:center}
+.counter{position:absolute;bottom:0;width:100%;height:47px;background:#f5b8cf;border-top:5px solid #e895b5}
+.customer{position:relative;z-index:1;width:37%;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-height:125px}
+.customer-face{font-size:60px;line-height:1.15}
+.customer.animal .customer-face{font-size:68px}
+.customer-name{font-weight:bold;margin-top:4px;font-size:14px}
+.customer-order{background:#fff;border-radius:11px;padding:7px;margin-top:5px;font-size:12px;max-width:100%;line-height:1.5}
+.dessert-area{position:relative;z-index:2;width:25%;display:flex;justify-content:center;align-items:flex-end;margin-bottom:25px}
+.dessert{position:relative;width:90px;height:105px}
+.scoop-stack{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);width:75px;height:75px}
+.scoop{position:absolute;left:50%;transform:translateX(-50%);width:37px;height:37px;border:2px solid #ffffffaa;border-radius:50%;box-shadow:inset -4px -5px 0 #0000000b}
+.cone{position:absolute;bottom:0;left:20px;width:0;height:0;border-left:25px solid transparent;border-right:25px solid transparent;border-top:58px solid #d99652;filter:drop-shadow(0 2px 1px #a66b36)}
+.cone:after{content:"";position:absolute;top:-52px;left:-17px;width:34px;height:44px;background:repeating-linear-gradient(135deg,transparent 0 7px,#b87939 8px 10px,transparent 11px 16px)}
+.cup{position:absolute;bottom:0;left:16px;width:58px;height:49px;border-radius:4px 4px 13px 13px;background:#ffacd0;border:3px solid white;box-shadow:inset 0 0 0 2px #ef8eb8}
 .cup:before{content:"";position:absolute;top:-6px;left:-5px;width:58px;height:9px;background:#fff;border:2px solid #ed9cbd;border-radius:5px}
-.cup .cup-label{position:absolute;top:14px;left:0;right:0;font-size:12px}
-#serveMessage{font-size:13px;min-height:18px;margin-top:5px}
-.flavor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:9px}
-.flavor{border:2px solid #f5e0eb;background:#fffafc;border-radius:14px;padding:10px 4px;color:#68405c}
-.flavor .emoji{display:block;font-size:27px;margin-bottom:4px}
-.flavor.locked{filter:grayscale(.6);background:#f2f2f2}
-.flavor.selected{border-color:#e87eae;background:#ffe4f0;box-shadow:0 0 0 2px #ffd1e4}
+.cup-label{position:absolute;top:13px;left:0;right:0;text-align:center;font-size:12px}
+.flavor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}
+.flavor{border:2px solid #f5e0eb;background:#fffafc;border-radius:13px;padding:9px 3px;color:#68405c}
+.flavor .emoji{display:block;font-size:26px;margin-bottom:3px}
+.flavor.selected{border-color:#e87eae;background:#ffe4f0}
 .flavor small{display:block;font-size:11px;margin-top:4px}
+.flavor.locked{background:#f1f1f1}
 .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .controls button{flex:1}
 #serveBtn{background:#a9e7bf;color:#285b3a}
 #nextBtn{background:#dcd0ff}
-.notice{font-size:13px;color:#92718a;margin-top:10px;line-height:1.6}
-.goal-list{display:grid;grid-template-columns:1fr;gap:8px}
-.goal{display:flex;align-items:center;gap:10px;border-radius:12px;padding:10px 12px;background:#fff6fa;border:1px solid #f4d8e7}
-.goal .gift-icon{font-size:22px}
-.goal .goal-text{flex:1}
-.goal .goal-amount{font-weight:bold}
+#serveMessage{font-size:13px;min-height:20px;margin-top:9px;line-height:1.6}
+.notice{font-size:13px;color:#92718a;margin-top:9px;line-height:1.7}
+.order-banner{background:#fff0a8;border:2px solid #f4d77e;border-radius:13px;padding:12px;margin-bottom:12px;text-align:center}
+.order-banner strong{display:block;font-size:19px;color:#79521b;margin-top:4px}
+.order-banner .order-details{margin-top:5px;font-size:14px;line-height:1.6}
+.goal-list{display:grid;gap:8px}
+.goal{display:flex;align-items:center;gap:9px;background:#fff6fa;border:1px solid #f4d8e7;border-radius:12px;padding:10px}
 .goal.done{background:#f0fff3;border-color:#a6dfb4}
-.goal.done .goal-amount{color:#34844a}
-.progress-track{height:12px;border-radius:10px;background:#f1e5ed;overflow:hidden;margin:10px 0}
+.gift-icon{font-size:22px}
+.goal-text{flex:1}
+.goal-status{font-size:12px;font-weight:bold}
+.progress-track{height:11px;background:#f1e5ed;border-radius:10px;overflow:hidden;margin:10px 0}
 .progress-fill{height:100%;width:0;background:linear-gradient(90deg,#ff9ec5,#c7a6ff);transition:width .3s}
-.collection{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}
-.collection-item{background:#fff7fb;border:1px solid #f1d9e7;border-radius:12px;padding:12px 6px;text-align:center}
-.collection-item .big{font-size:29px}
+.collection{display:grid;grid-template-columns:repeat(auto-fit,minmax(95px,1fr));gap:8px}
+.collection-item{background:#fff7fb;border:1px solid #f1d9e7;border-radius:12px;padding:11px 5px;text-align:center}
+.collection-item .big{font-size:28px}
 .collection-item small{display:block;margin-top:4px}
 .empty{color:#b09aaa;font-size:13px;padding:10px}
 footer{text-align:center;font-size:12px;color:#a58ba0;padding:8px 10px 25px}
 #giftModal{display:none;position:fixed;z-index:10;inset:0;background:#4c294c99;align-items:center;justify-content:center;padding:18px}
 #giftModal.show{display:flex}
-.gift-card{background:#fff9fc;border-radius:22px;padding:25px 20px;text-align:center;width:min(340px,100%);box-shadow:0 10px 35px #4a244a40}
-.gift-card h2{margin-bottom:12px}
-.gift-box{font-size:85px;cursor:pointer;animation:bob 1s infinite alternate}
-@keyframes bob{to{transform:translateY(-8px) rotate(4deg)}}
+.gift-card{background:#fff9fc;border-radius:22px;padding:24px 18px;text-align:center;width:min(340px,100%)}
+.gift-box{font-size:80px;cursor:pointer;animation:bob 1s infinite alternate}
 .gift-reveal{display:none;font-size:65px;margin:12px}
-.gift-card p{line-height:1.6}
-#flyDessert{position:fixed;z-index:20;display:none;font-size:50px;pointer-events:none}
-@keyframes eat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(80px,-25px) scale(.85)}100%{transform:translate(150px,15px) scale(.15);opacity:0}}
+@keyframes bob{to{transform:translateY(-7px) rotate(4deg)}}
+#flyDessert{position:fixed;z-index:20;display:none;font-size:48px;pointer-events:none}
 @media(max-width:500px){
- main{padding:10px}
- .panel{padding:12px}
- h1{font-size:22px}
- .shop-scene{min-height:225px;padding-left:3px;padding-right:3px}
- .customer-face{font-size:55px}
- .customer.animal .customer-face{font-size:62px}
- .dessert-area{width:25%}
- .dessert{transform:scale(.85)}
- .customer-order{font-size:11px}
- .stat{min-width:90px;padding:8px}
- .stat strong{font-size:16px}
+ main{padding:9px}.panel{padding:11px}h1{font-size:21px}
+ .customer{width:38%}.customer-face{font-size:50px}
+ .customer.animal .customer-face{font-size:57px}
+ .customer-order{font-size:11px}.dessert-area{width:24%}
+ .dessert{transform:scale(.85)}.stat{min-width:88px;padding:8px}
 }
 </style>
 </head>
 <body>
 <header>
-  <h1>🍦 <span id="shopTitle">무지개 아이스크림 가게</span></h1>
-  <div>
-    <input id="shopNameInput" maxlength="24" placeholder="가게 이름 입력">
-    <button id="saveNameBtn">이름 저장</button>
-  </div>
-  <div class="stats">
-    <div class="stat"><small>💰 보유 금액</small><strong id="money">0원</strong></div>
-    <div class="stat"><small>⭐ 가게 레벨</small><strong id="level">Lv. 0</strong></div>
-    <div class="stat"><small>🍨 판매한 스쿱</small><strong id="sold">0개</strong></div>
-  </div>
+<h1>🍦 <span id="shopTitle">무지개 아이스크림 가게</span></h1>
+<input id="shopNameInput" maxlength="24" placeholder="가게 이름 입력">
+<button id="saveNameBtn">이름 저장</button>
+<div class="stats">
+<div class="stat"><small>💰 보유 금액</small><strong id="money">0원</strong></div>
+<div class="stat"><small>⭐ 가게 레벨</small><strong id="level">Lv. 0</strong></div>
+<div class="stat"><small>🍨 판매 스쿱</small><strong id="sold">0개</strong></div>
+</div>
 </header>
 
 <main>
-  <section class="panel">
-    <h2>🏪 우리 가게</h2>
-    <div class="shop-scene">
-      <div class="counter"></div>
-      <div class="customer" id="customer">
-        <div class="customer-face" id="customerFace">👧🏻</div>
-        <div class="customer-name" id="customerName">세아</div>
-        <div class="customer-order" id="customerOrder">주문을 준비하고 있어요!</div>
-      </div>
-      <div class="dessert-area">
-        <div class="dessert" id="dessert">
-          <div class="scoop-stack" id="scoopStack"></div>
-          <div class="cone" id="cone"></div>
-          <div class="cup" id="cup" style="display:none"><span class="cup-label">ICE</span></div>
-        </div>
-      </div>
-      <div class="customer" id="customerRight" style="display:none">
-        <div class="customer-face">😋</div>
-        <div class="customer-name">냠냠!</div>
-      </div>
-    </div>
-    <div id="serveMessage">손님이 원하는 맛을 골라 주세요!</div>
-  </section>
+<section class="panel">
+<h2>🏪 우리 가게</h2>
+<div class="order-banner">
+손님 주문 확인
+<strong id="orderContainer">주문을 준비하고 있어요!</strong>
+<div class="order-details" id="orderDetails">잠시만 기다려 주세요.</div>
+</div>
+<div class="shop-scene">
+<div class="counter"></div>
+<div class="customer" id="customer">
+<div class="customer-face" id="customerFace">👧🏻</div>
+<div class="customer-name" id="customerName">세아</div>
+<div class="customer-order" id="customerOrder">주문을 확인해 주세요!</div>
+</div>
+<div class="dessert-area">
+<div class="dessert" id="dessert">
+<div class="scoop-stack" id="scoopStack"></div>
+<div class="cone" id="cone"></div>
+<div class="cup" id="cup" style="display:none"><span class="cup-label">ICE</span></div>
+</div>
+</div>
+</div>
+<div id="serveMessage">주문을 확인하고 콘 또는 컵을 선택해 주세요!</div>
+</section>
 
-  <section class="panel">
-    <h2>🍦 아이스크림 만들기</h2>
-    <div class="flavor-grid" id="flavorGrid"></div>
-    <div class="controls">
-      <button id="coneBtn">🍦 콘 선택</button>
-      <button id="cupBtn">🥤 컵 선택</button>
-      <button id="serveBtn">🎁 손님에게 건네기</button>
-      <button id="nextBtn">➡️ 주문 다시 받기</button>
-    </div>
-    <div class="notice">
-      • 한 스쿱은 2,000원이에요. 손님 주문에 맞게 아이스크림을 담아 주세요.<br>
-      • 콘은 위로 쌓이고, 컵은 컵 안에 담겨요.<br>
-      • 레벨이 오를 때마다 새로운 맛이 열려요. 레벨 10이 최고 레벨이에요.
-    </div>
-  </section>
+<section class="panel">
+<h2>🍦 아이스크림 만들기</h2>
+<div class="flavor-grid" id="flavorGrid"></div>
+<div class="controls">
+<button id="coneBtn">🍦 콘 선택</button>
+<button id="cupBtn">🥤 컵 선택</button>
+<button id="serveBtn">🎁 손님에게 건네기</button>
+<button id="nextBtn">➡️ 다음 손님</button>
+</div>
+<div class="notice">
+• 한 스쿱은 2,000원이에요.<br>
+• 손님 주문에 표시된 용기와 맛, 스쿱 수를 맞춰 주세요.<br>
+• 콘은 아이스크림이 위로 쌓이고, 컵은 컵에 담겨요.<br>
+• 레벨이 오를 때마다 새로운 맛이 열려요. 최고 레벨은 10이에요.
+</div>
+</section>
 
-  <section class="panel">
-    <h2>🎁 선물 목표</h2>
-    <div class="goal-list" id="goalList"></div>
-    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="notice" id="progressText">첫 번째 선물까지 조금씩 모아 봐요!</div>
-  </section>
+<section class="panel">
+<h2>🎁 선물 목표</h2>
+<div class="goal-list" id="goalList"></div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+<div class="notice" id="progressText"></div>
+</section>
 
-  <section class="panel">
-    <h2>🎀 내가 받은 선물</h2>
-    <div class="collection" id="collection"></div>
-  </section>
+<section class="panel">
+<h2>🎀 내가 받은 선물</h2>
+<div class="collection" id="collection"></div>
+</section>
 
-  <section class="panel">
-    <h2>📒 가게 기록</h2>
-    <div id="records" class="notice">아직 판매 기록이 없어요.</div>
-    <div class="controls">
-      <button id="resetBtn" style="background:#eee">🔄 게임 처음부터 시작</button>
-    </div>
-  </section>
+<section class="panel">
+<h2>📒 가게 기록</h2>
+<div id="records" class="notice">아직 판매 기록이 없어요.</div>
+<div class="controls"><button id="resetBtn" style="background:#eee">🔄 게임 처음부터 시작</button></div>
+</section>
 </main>
 
 <footer>무지개 아이스크림 가게 🍦 오늘도 달콤한 하루!</footer>
 
 <div id="giftModal">
-  <div class="gift-card">
-    <h2 id="giftTitle">🎉 선물을 받았어요!</h2>
-    <p id="giftDesc">상자를 눌러 선물을 열어 보세요!</p>
-    <div class="gift-box" id="giftBox">🎁</div>
-    <div class="gift-reveal" id="giftReveal"></div>
-    <button id="giftClose" style="display:none">확인했어요 💗</button>
-  </div>
+<div class="gift-card">
+<h2 id="giftTitle">🎉 선물 목표 달성!</h2>
+<p id="giftDesc">상자를 눌러 선물을 열어 보세요!</p>
+<div class="gift-box" id="giftBox">🎁</div>
+<div class="gift-reveal" id="giftReveal"></div>
+<button id="giftClose" style="display:none">확인했어요 💗</button>
+</div>
 </div>
 <div id="flyDessert">🍦</div>
 
 <script>
-(() => {
 "use strict";
 
-const SCOOP_PRICE = 2000;
-const LEVEL_PRICE = 20000;
-const SAVE_KEY = "iceCreamShopSave";
+const SAVE_KEY="iceCreamShopSave";
+const SCOOP_PRICE=2000;
+const LEVEL_PRICE=20000;
 
-const flavors = [
-  {name:"초코",emoji:"🍫",color:"#875238",level:0},
-  {name:"딸기",emoji:"🍓",color:"#ff9dbd",level:0},
-  {name:"바닐라",emoji:"🍦",color:"#fff0c2",level:0},
-  {name:"민트초코",emoji:"🌿",color:"#8ed9c2",level:0},
-  {name:"카라멜",emoji:"🍮",color:"#dca15c",level:0},
-  {name:"바나나",emoji:"🍌",color:"#ffe477",level:1},
-  {name:"말차",emoji:"🍵",color:"#8dbb68",level:2},
-  {name:"요거트",emoji:"🥛",color:"#f5f1ff",level:3},
-  {name:"오레오",emoji:"🍪",color:"#b3a5a0",level:4},
-  {name:"피스타치오",emoji:"🥜",color:"#b8d58b",level:5},
-  {name:"아몬드",emoji:"🌰",color:"#d6b08a",level:6},
-  {name:"치즈케이크",emoji:"🍰",color:"#ffe0a3",level:7},
-  {name:"체리",emoji:"🍒",color:"#ec7187",level:8},
-  {name:"메론",emoji:"🍈",color:"#b4e6a0",level:9},
-  {name:"무지개",emoji:"🌈",color:"rainbow",level:10}
-];
-
-const gifts = [
-  {id:"bag",amount:50000,name:"명품 백",emoji:"👜"},
-  {id:"car",amount:100000,name:"자동차",emoji:"🚗"},
-  {id:"house",amount:150000,name:"집",emoji:"🏡"},
-  {id:"ring",amount:200000,name:"다이아 반지",emoji:"💍"},
-  {id:"jet",amount:250000,name:"전용기 비행기",emoji:"✈️"}
+const flavors=[
+{name:"초코",emoji:"🍫",color:"#875238",level:0},
+{name:"딸기",emoji:"🍓",color:"#ff9dbd",level:0},
+{name:"바닐라",emoji:"🍦",color:"#fff0c2",level:0},
+{name:"민트초코",emoji:"🌿",color:"#8ed9c2",level:0},
+{name:"카라멜",emoji:"🍮",color:"#dca15c",level:0},
+{name:"바나나",emoji:"🍌",color:"#ffe477",level:1},
+{name:"말차",emoji:"🍵",color:"#8dbb68",level:2},
+{name:"요거트",emoji:"🥛",color:"#f5f1ff",level:3},
+{name:"오레오",emoji:"🍪",color:"#b3a5a0",level:4},
+{name:"피스타치오",emoji:"🥜",color:"#b8d58b",level:5},
+{name:"아몬드",emoji:"🌰",color:"#d6b08a",level:6},
+{name:"치즈케이크",emoji:"🍰",color:"#ffe0a3",level:7},
+{name:"체리",emoji:"🍒",color:"#ec7187",level:8},
+{name:"메론",emoji:"🍈",color:"#b4e6a0",level:9},
+{name:"무지개",emoji:"🌈",color:"rainbow",level:10}
 ];
 
-const women = [
-  {name:"세아",emoji:"👧🏻"},{name:"시원",emoji:"👩🏻"},
-  {name:"유나",emoji:"👧🏼"},{name:"서현",emoji:"👩🏻‍🦰"},
-  {name:"흔이",emoji:"👧🏻"},{name:"혜윤",emoji:"👩🏼"},
-  {name:"하윤",emoji:"👧🏽"},{name:"지유",emoji:"👧🏻"},
-  {name:"서이",emoji:"👩🏻"}
+const gifts=[
+{id:"bag",amount:50000,name:"명품 백",emoji:"👜"},
+{id:"car",amount:100000,name:"자동차",emoji:"🚗"},
+{id:"house",amount:150000,name:"집",emoji:"🏡"},
+{id:"ring",amount:200000,name:"다이아 반지",emoji:"💍"},
+{id:"jet",amount:250000,name:"전용기 비행기",emoji:"✈️"}
 ];
-const men = [
-  {name:"현서",emoji:"👦🏻"},{name:"민서",emoji:"👦🏼"},
-  {name:"수호",emoji:"🧑🏻"},{name:"마루",emoji:"👦🏻"},
-  {name:"무결",emoji:"🧑🏼"},{name:"상현",emoji:"👨🏻"},
-  {name:"루다",emoji:"👦🏻"},{name:"혁민",emoji:"🧑🏻"},
-  {name:"미하일",emoji:"👨🏼"},{name:"민수",emoji:"👦🏻"},
-  {name:"민서",emoji:"🧑🏻"}
+
+const women=[
+{name:"세아",emoji:"👧🏻"},{name:"시원",emoji:"👩🏻"},
+{name:"유나",emoji:"👧🏼"},{name:"서현",emoji:"👩🏻‍🦰"},
+{name:"흔이",emoji:"👧🏻"},{name:"혜윤",emoji:"👩🏼"},
+{name:"하윤",emoji:"👧🏽"},{name:"지유",emoji:"👧🏻"},
+{name:"서이",emoji:"👩🏻"}
 ];
-const animals = [
-  {name:"하니",type:"말티즈",emoji:"🐩"},
-  {name:"초코",type:"푸들",emoji:"🐕"},
-  {name:"몽이",type:"포메라니안",emoji:"🐶"},
-  {name:"두부",type:"비숑 프리제",emoji:"🐩"},
-  {name:"콩이",type:"웰시코기",emoji:"🐕"},
-  {name:"보리",type:"시바견",emoji:"🐕"},
-  {name:"해피",type:"골든 리트리버",emoji:"🐕"},
-  {name:"구름",type:"시츄",emoji:"🐶"},
-  {name:"나비",type:"고양이",emoji:"🐈"},
-  {name:"호두",type:"치즈 고양이",emoji:"🐈"},
-  {name:"까미",type:"검은 고양이",emoji:"🐈‍⬛"},
-  {name:"별이",type:"고등어 고양이",emoji:"🐈"},
-  {name:"달이",type:"페르시안 고양이",emoji:"🐱"},
-  {name:"모찌",type:"아기 고양이",emoji:"🐈"}
+const men=[
+{name:"현서",emoji:"👦🏻"},{name:"민서",emoji:"👦🏼"},
+{name:"수호",emoji:"🧑🏻"},{name:"마루",emoji:"👦🏻"},
+{name:"무결",emoji:"🧑🏼"},{name:"상현",emoji:"👨🏻"},
+{name:"루다",emoji:"👦🏻"},{name:"혁민",emoji:"🧑🏻"},
+{name:"미하일",emoji:"👨🏼"},{name:"민수",emoji:"👦🏻"},
+{name:"민서",emoji:"🧑🏻"}
+];
+const animals=[
+{name:"하니",type:"말티즈",emoji:"🐩"},
+{name:"초코",type:"푸들",emoji:"🐕"},
+{name:"몽이",type:"포메라니안",emoji:"🐶"},
+{name:"두부",type:"비숑 프리제",emoji:"🐩"},
+{name:"콩이",type:"웰시코기",emoji:"🐕"},
+{name:"보리",type:"시바견",emoji:"🐕"},
+{name:"해피",type:"골든 리트리버",emoji:"🐕"},
+{name:"구름",type:"시츄",emoji:"🐶"},
+{name:"나비",type:"고양이",emoji:"🐈"},
+{name:"호두",type:"치즈 고양이",emoji:"🐈"},
+{name:"까미",type:"검은 고양이",emoji:"🐈‍⬛"},
+{name:"별이",type:"고등어 고양이",emoji:"🐈"},
+{name:"달이",type:"페르시안 고양이",emoji:"🐱"},
+{name:"모찌",type:"아기 고양이",emoji:"🐈"}
 ];
 
 function freshState(){
-  return {
-    shopName:"무지개 아이스크림 가게",
-    money:0,sold:0,level:0,container:"",
-    currentCustomer:null,order:[],scoops:[],
-    giftsClaimed:[],pendingGifts:[],
-    records:[],lastHuman:"",lastAnimal:"",
-    serving:false
-  };
+return {
+shopName:"무지개 아이스크림 가게",money:0,sold:0,level:0,
+container:"",currentCustomer:null,order:[],scoops:[],
+giftsClaimed:[],pendingGifts:[],records:[],
+lastHuman:"",lastAnimal:"",serving:false
+};
 }
-let state = freshState();
+let state=freshState();
+try{
+const saved=JSON.parse(localStorage.getItem(SAVE_KEY)||"null");
+if(saved&&typeof saved==="object")state={...freshState(),...saved};
+}catch(e){state=freshState();}
 
-try {
-  const saved = JSON.parse(localStorage.getItem(SAVE_KEY) || "null");
-  if(saved && typeof saved === "object"){
-    state = {...freshState(),...saved};
-    if(!Array.isArray(state.giftsClaimed)) state.giftsClaimed=[];
-    if(!Array.isArray(state.pendingGifts)) state.pendingGifts=[];
-    if(!Array.isArray(state.records)) state.records=[];
-    if(!Array.isArray(state.scoops)) state.scoops=[];
-    if(!Array.isArray(state.order)) state.order=[];
-  }
-} catch(e) {
-  state = freshState();
-}
-
-const $ = id => document.getElementById(id);
-const won = n => Math.floor(n).toLocaleString("ko-KR")+"원";
-const pick = arr => arr[Math.floor(Math.random()*arr.length)];
-const shuffle = arr => [...arr].sort(()=>Math.random()-.5);
+const $=id=>document.getElementById(id);
+const won=n=>Math.floor(n).toLocaleString("ko-KR")+"원";
+const pick=arr=>arr[Math.floor(Math.random()*arr.length)];
+const shuffle=arr=>[...arr].sort(()=>Math.random()-.5);
+const getLevel=money=>Math.min(10,Math.floor(money/LEVEL_PRICE));
 
 function save(){
-  try { localStorage.setItem(SAVE_KEY,JSON.stringify(state)); }
-  catch(e){ console.warn("저장할 수 없습니다.",e); }
+try{localStorage.setItem(SAVE_KEY,JSON.stringify(state));}
+catch(e){console.warn("저장할 수 없습니다.",e);}
 }
-
-function getLevel(money){
-  return Math.min(10,Math.floor(money/LEVEL_PRICE));
+function chooseUnique(arr,last){
+let choices=arr.filter(x=>x.name!==last);
+return pick(choices.length?choices:arr);
 }
-function unlockedFlavors(){
-  return flavors.filter(f=>f.level<=state.level);
+function orderCount(){
+return state.order.reduce((sum,o)=>sum+o.count,0);
 }
-function currentScoopCount(){
-  return state.scoops.length;
-}
-function orderDescription(order){
-  return order.map(o=>`${o.flavor} ${o.count}스쿱`).join(" + ");
-}
-function orderCount(order){
-  return order.reduce((sum,o)=>sum+o.count,0);
-}
-function remainingOrder(flavorName){
-  const requested=state.order.find(o=>o.flavor===flavorName);
-  if(!requested)return 0;
-  const used=state.scoops.filter(s=>s.flavor===flavorName).length;
-  return Math.max(0,requested.count-used);
+function remainingOrder(name){
+const requested=state.order.find(o=>o.flavor===name);
+if(!requested)return 0;
+const used=state.scoops.filter(s=>s.flavor===name).length;
+return Math.max(0,requested.count-used);
 }
 function isOrderComplete(){
-  return orderCount(state.scoops.map(s=>({count:1})))===orderCount(state.order)
-    && state.order.every(o=>state.scoops.filter(s=>s.flavor===o.flavor).length===o.count);
+return state.order.every(o=>
+state.scoops.filter(s=>s.flavor===o.flavor).length===o.count
+)&&state.scoops.length===orderCount();
 }
-function colorFor(flavorName){
-  const f=flavors.find(x=>x.name===flavorName);
-  return f ? f.color : "#fff0c2";
-}
-function flavorEmoji(flavorName){
-  const f=flavors.find(x=>x.name===flavorName);
-  return f ? f.emoji : "🍨";
-}
-
-function chooseUnique(arr,lastName){
-  let choices=arr.filter(x=>x.name!==lastName);
-  if(!choices.length)choices=arr;
-  return pick(choices);
+function orderDescription(){
+return state.order.map(o=>`${o.flavor} ${o.count}스쿱`).join(" + ");
 }
 
 function newCustomer(){
-  if(state.serving)return;
-  state.container="";
-  state.scoops=[];
-  const isAnimal=Math.random()<0.4;
-  let customer;
-  if(isAnimal){
-    customer=chooseUnique(animals,state.lastAnimal);
-    state.lastAnimal=customer.name;
-    customer={...customer,kind:"animal",face:customer.emoji};
-  }else{
-    const group=Math.random()<0.5?women:men;
-    customer=chooseUnique(group,state.lastHuman);
-    state.lastHuman=customer.name;
-    customer={...customer,kind:"human",face:customer.emoji};
-  }
+if(state.serving)return;
+state.container="";
+state.scoops=[];
+let customer;
+if(Math.random()<0.4){
+const a=chooseUnique(animals,state.lastAnimal);
+state.lastAnimal=a.name;
+customer={...a,kind:"animal",face:a.emoji};
+}else{
+const group=Math.random()<0.5?women:men;
+const h=chooseUnique(group,state.lastHuman);
+state.lastHuman=h.name;
+customer={...h,kind:"human",face:h.emoji};
+}
+state.currentCustomer=customer;
 
-  const available=unlockedFlavors();
-  const flavorCount=Math.random()<0.55?1:2;
-  const selected=shuffle(available).slice(0,Math.min(flavorCount,available.length));
-  state.order=selected.map(f=>({flavor:f.name,count:Math.random()<0.55?1:2}));
-  state.currentCustomer=customer;
-  $("customerFace").textContent=customer.face;
-  $("customerName").textContent=customer.kind==="animal"
-    ? `${customer.name} (${customer.type})` : customer.name;
-  $("customerOrder").textContent=`주문: ${orderDescription(state.order)}`;
-  $("customer").classList.toggle("animal",customer.kind==="animal");
-  $("customerRight").style.display="none";
-  $("serveMessage").textContent="주문에 맞게 아이스크림을 담아 주세요!";
-  renderDessert();
-  renderFlavors();
-  save();
+const available=flavors.filter(f=>f.level<=state.level);
+const count=Math.random()<0.55?1:2;
+state.order=shuffle(available).slice(0,Math.min(count,available.length))
+.map(f=>({flavor:f.name,count:Math.random()<0.55?1:2}));
+
+// 손님마다 콘 또는 컵을 무작위로 주문
+state.requiredContainer=Math.random()<0.5?"콘":"컵";
+
+$("customerFace").textContent=customer.face;
+$("customerName").textContent=customer.kind==="animal"
+?`${customer.name} (${customer.type})`:customer.name;
+$("customer").classList.toggle("animal",customer.kind==="animal");
+$("customerOrder").textContent=orderDescription();
+$("orderContainer").textContent=
+(state.requiredContainer==="콘"?"🍦 콘":"🥤 컵")+"으로 주세요!";
+$("orderDetails").textContent=
+`${orderDescription()} · 총 ${orderCount()}스쿱 · ${won(orderCount()*SCOOP_PRICE)}`;
+$("customerRight").style.display="none";
+$("serveMessage").textContent="주문을 확인하고 용기와 맛을 맞춰 주세요!";
+renderDessert();
+renderFlavors();
+save();
 }
 
 function renderFlavors(){
-  const grid=$("flavorGrid");
-  grid.innerHTML="";
-  flavors.forEach(f=>{
-    const unlocked=f.level<=state.level;
-    const remaining=remainingOrder(f.name);
-    const button=document.createElement("button");
-    button.className="flavor"+(!unlocked?" locked":"")+
-      (remaining>0?" selected":"");
-    button.disabled=!unlocked||state.serving;
-    const emoji=document.createElement("span");
-    emoji.className="emoji";
-    emoji.textContent=unlocked?f.emoji:"🔒";
-    const name=document.createElement("span");
-    name.textContent=f.name;
-    const small=document.createElement("small");
-    small.textContent=unlocked
-      ? (remaining>0?`주문 ${remaining}스쿱 남음`:"한 스쿱 2,000원")
-      : `레벨 ${f.level}에 해금`;
-    button.append(emoji,name,small);
-    button.addEventListener("click",()=>addScoop(f));
-    grid.appendChild(button);
-  });
+const grid=$("flavorGrid");
+grid.innerHTML="";
+flavors.forEach(f=>{
+const unlocked=f.level<=state.level;
+const remaining=remainingOrder(f.name);
+const b=document.createElement("button");
+b.className="flavor"+(remaining>0?" selected":"")+
+(!unlocked?" locked":"");
+b.disabled=!unlocked||state.serving;
+b.innerHTML=`<span class="emoji">${unlocked?f.emoji:"🔒"}</span>
+${f.name}<small>${unlocked?(remaining?`주문 ${remaining}스쿱 남음`:"한 스쿱 2,000원"):`레벨 ${f.level}에 해금`}</small>`;
+b.addEventListener("click",()=>addScoop(f));
+grid.appendChild(b);
+});
 }
 
-function addScoop(flavor){
-  if(state.serving)return;
-  if(!state.currentCustomer){newCustomer();return;}
-  const remaining=remainingOrder(flavor.name);
-  if(remaining<=0){
-    $("serveMessage").textContent="이 맛은 주문에 없거나 이미 다 담았어요!";
-    return;
-  }
-  state.scoops.push({flavor:flavor.name,color:flavor.color,emoji:flavor.emoji});
-  renderDessert();
-  renderFlavors();
-  $("serveMessage").textContent=`${flavor.name} 아이스크림을 담았어요! (${currentScoopCount()}스쿱)`;
-  save();
+function addScoop(f){
+if(state.serving||!state.currentCustomer)return;
+if(remainingOrder(f.name)<=0){
+$("serveMessage").textContent="이 맛은 주문에 없거나 이미 다 담았어요!";
+return;
 }
-
-function renderDessert(){
-  const stack=$("scoopStack");
-  stack.innerHTML="";
-  $("cone").style.display=state.container==="컵"?"none":"block";
-  $("cup").style.display=state.container==="컵"?"block":"none";
-  state.scoops.forEach((s,i)=>{
-    const ball=document.createElement("div");
-    ball.className="scoop";
-    ball.style.background=s.color==="rainbow"
-      ?"conic-gradient(#ff7b7b,#ffcf69,#fff080,#83dca1,#86caff,#c7a0ff,#ff7b7b)"
-      :s.color;
-    ball.style.bottom=(i*22)+"px";
-    if(i>=4)ball.style.bottom=(66+(i-4)*15)+"px";
-    stack.appendChild(ball);
-  });
-  stack.style.bottom=state.container==="컵"?"24px":"32px";
-  stack.style.height=Math.max(75,state.scoops.length*23+15)+"px";
+state.scoops.push({flavor:f.name,color:f.color,emoji:f.emoji});
+renderDessert();
+renderFlavors();
+$("serveMessage").textContent=`${f.name} 한 스쿱을 담았어요! (${state.scoops.length}/${orderCount()}스쿱)`;
+save();
 }
 
 function chooseContainer(type){
-  if(state.serving)return;
-  state.container=type;
-  renderDessert();
-  $("serveMessage").textContent=type==="콘"
-    ?"콘을 골랐어요! 아이스크림이 콘 위에 쌓여요."
-    :"컵을 골랐어요! 아이스크림을 컵에 담아요.";
-  save();
+if(state.serving)return;
+state.container=type;
+renderDessert();
+if(type!==state.requiredContainer){
+$("serveMessage").textContent=`손님은 ${state.requiredContainer}을(를) 주문했어요. 주문에 맞는 용기를 선택해 주세요!`;
+}else{
+$("serveMessage").textContent=`잘 골랐어요! ${type}에 아이스크림을 담아 주세요.`;
+}
+save();
+}
+
+function renderDessert(){
+const stack=$("scoopStack");
+stack.innerHTML="";
+$("cone").style.display=state.container==="컵"?"none":"block";
+$("cup").style.display=state.container==="컵"?"block":"none";
+state.scoops.forEach((s,i)=>{
+const ball=document.createElement("div");
+ball.className="scoop";
+ball.style.background=s.color==="rainbow"
+?"conic-gradient(#ff7b7b,#ffcf69,#fff080,#83dca1,#86caff,#c7a0ff,#ff7b7b)"
+:s.color;
+ball.style.bottom=(i*22)+"px";
+stack.appendChild(ball);
+});
+stack.style.bottom=state.container==="컵"?"24px":"32px";
+stack.style.height=Math.max(75,state.scoops.length*23+15)+"px";
 }
 
 function checkGiftMilestones(){
-  gifts.forEach(g=>{
-    if(state.money>=g.amount &&
-       !state.giftsClaimed.includes(g.id) &&
-       !state.pendingGifts.includes(g.id)){
-      state.pendingGifts.push(g.id);
-    }
-  });
+gifts.forEach(g=>{
+if(state.money>=g.amount&&!state.giftsClaimed.includes(g.id)
+&&!state.pendingGifts.includes(g.id)){
+state.pendingGifts.push(g.id);
 }
-
+});
+}
 function renderGoals(){
-  const list=$("goalList");
-  list.innerHTML="";
-  gifts.forEach(g=>{
-    const claimed=state.giftsClaimed.includes(g.id);
-    const ready=state.pendingGifts.includes(g.id);
-    const row=document.createElement("div");
-    row.className="goal"+(claimed?" done":"");
-    const icon=document.createElement("span");
-    icon.className="gift-icon";
-    icon.textContent=claimed?"🎉":ready?"🎁":"🔒";
-    const text=document.createElement("div");
-    text.className="goal-text";
-    text.textContent=`${won(g.amount)} — ${g.name} ${g.emoji}`;
-    const status=document.createElement("span");
-    status.className="goal-amount";
-    status.textContent=claimed?"받음":ready?"열기":"목표";
-    row.append(icon,text,status);
-    if(ready){
-      row.style.cursor="pointer";
-      row.title="눌러서 선물 열기";
-      row.addEventListener("click",showNextGift);
-    }
-    list.appendChild(row);
-  });
-  const next=gifts.find(g=>!state.giftsClaimed.includes(g.id));
-  const previous=state.money;
-  if(!next){
-    $("progressFill").style.width="100%";
-    $("progressText").textContent="모든 선물을 모았어요! 정말 대단해요! 🎉";
-  }else{
-    const start=next.amount===50000?0:next.amount-50000;
-    const percent=Math.max(0,Math.min(100,(state.money-start)/(next.amount-start)*100));
-    $("progressFill").style.width=percent+"%";
-    $("progressText").textContent=`다음 선물 ${next.emoji} ${next.name}까지 ${won(Math.max(0,next.amount-state.money))} 남았어요!`;
-  }
+const list=$("goalList");
+list.innerHTML="";
+gifts.forEach(g=>{
+const claimed=state.giftsClaimed.includes(g.id);
+const ready=state.pendingGifts.includes(g.id);
+const row=document.createElement("div");
+row.className="goal"+(claimed?" done":"");
+const icon=document.createElement("span");
+icon.className="gift-icon";
+icon.textContent=claimed?"🎉":ready?"🎁":"🔒";
+const text=document.createElement("div");
+text.className="goal-text";
+text.textContent=`${won(g.amount)} — ${g.name} ${g.emoji}`;
+const status=document.createElement("span");
+status.className="goal-status";
+status.textContent=claimed?"받음":ready?"열기":"목표";
+row.append(icon,text,status);
+if(ready){row.style.cursor="pointer";row.onclick=showNextGift;}
+list.appendChild(row);
+});
+const next=gifts.find(g=>!state.giftsClaimed.includes(g.id));
+if(!next){
+$("progressFill").style.width="100%";
+$("progressText").textContent="모든 선물을 모았어요! 🎉";
+}else{
+const previous=next.amount-50000;
+const percent=Math.max(0,Math.min(100,(state.money-previous)/(next.amount-previous)*100));
+$("progressFill").style.width=percent+"%";
+$("progressText").textContent=`다음 선물 ${next.emoji} ${next.name}까지 ${won(Math.max(0,next.amount-state.money))} 남았어요!`;
 }
-
+}
 function renderCollection(){
-  const box=$("collection");
-  box.innerHTML="";
-  const claimed=gifts.filter(g=>state.giftsClaimed.includes(g.id));
-  if(!claimed.length){
-    box.innerHTML='<div class="empty">아직 받은 선물이 없어요. 50,000원을 모아 첫 선물을 받아 보세요!</div>';
-    return;
-  }
-  claimed.forEach(g=>{
-    const item=document.createElement("div");
-    item.className="collection-item";
-    item.innerHTML=`<div class="big">${g.emoji}</div><strong>${g.name}</strong><small>${won(g.amount)} 달성</small>`;
-    box.appendChild(item);
-  });
+const box=$("collection");
+box.innerHTML="";
+const claimed=gifts.filter(g=>state.giftsClaimed.includes(g.id));
+if(!claimed.length){
+box.innerHTML='<div class="empty">첫 번째 선물은 50,000원부터 받을 수 있어요!</div>';
+return;
 }
-
-function renderRecords(){
-  const box=$("records");
-  if(!state.records.length){
-    box.textContent="아직 판매 기록이 없어요.";
-    return;
-  }
-  box.innerHTML=state.records.slice(-5).reverse().map(r=>
-    `<div>🍨 ${escapeHtml(r.name)} — ${r.count}스쿱 판매 / ${won(r.earned)}</div>`
-  ).join("");
+claimed.forEach(g=>{
+const item=document.createElement("div");
+item.className="collection-item";
+item.innerHTML=`<div class="big">${g.emoji}</div><strong>${g.name}</strong><small>${won(g.amount)} 달성</small>`;
+box.appendChild(item);
+});
 }
-
 function escapeHtml(s){
-  return String(s).replace(/[&<>"']/g,c=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  }[c]));
+return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
-
+function renderRecords(){
+$("records").innerHTML=state.records.length
+?state.records.slice(-5).reverse().map(r=>`<div>🍨 ${escapeHtml(r.name)} — ${r.count}스쿱 / ${won(r.earned)}</div>`).join("")
+:"아직 판매 기록이 없어요.";
+}
 function render(){
-  state.level=getLevel(state.money);
-  $("shopTitle").textContent=state.shopName;
-  $("shopNameInput").value=state.shopName;
-  $("money").textContent=won(state.money);
-  $("level").textContent=`Lv. ${state.level}`;
-  $("sold").textContent=`${state.sold}개`;
-  renderFlavors();
-  renderDessert();
-  renderGoals();
-  renderCollection();
-  renderRecords();
+state.level=getLevel(state.money);
+$("shopTitle").textContent=state.shopName;
+$("shopNameInput").value=state.shopName;
+$("money").textContent=won(state.money);
+$("level").textContent=`Lv. ${state.level}`;
+$("sold").textContent=`${state.sold}개`;
+renderFlavors();
+renderDessert();
+renderGoals();
+renderCollection();
+renderRecords();
 }
 
 function showNextGift(){
-  const id=state.pendingGifts[0];
-  if(!id)return;
-  const gift=gifts.find(g=>g.id===id);
-  if(!gift)return;
-  $("giftTitle").textContent="🎉 선물 목표 달성!";
-  $("giftDesc").textContent=`${won(gift.amount)}을 모았어요! 상자를 눌러 ${gift.name}을(를) 확인해 보세요.`;
-  $("giftBox").style.display="block";
-  $("giftBox").textContent="🎁";
-  $("giftReveal").style.display="none";
-  $("giftClose").style.display="none";
-  $("giftModal").classList.add("show");
-  $("giftBox").onclick=()=>{
-    $("giftBox").style.display="none";
-    $("giftReveal").style.display="block";
-    $("giftReveal").textContent=gift.emoji;
-    $("giftDesc").textContent=`축하해요! ${gift.name} 선물을 받았어요!`;
-    $("giftClose").style.display="inline-block";
-    if(!state.giftsClaimed.includes(gift.id))state.giftsClaimed.push(gift.id);
-    state.pendingGifts=state.pendingGifts.filter(x=>x!==gift.id);
-    save();
-    renderGoals();
-    renderCollection();
-  };
+const id=state.pendingGifts[0];
+if(!id)return;
+const gift=gifts.find(g=>g.id===id);
+if(!gift)return;
+$("giftTitle").textContent="🎉 선물 목표 달성!";
+$("giftDesc").textContent=`${won(gift.amount)} 달성! 상자를 눌러 ${gift.name}을(를) 열어 보세요.`;
+$("giftBox").style.display="block";
+$("giftBox").textContent="🎁";
+$("giftReveal").style.display="none";
+$("giftClose").style.display="none";
+$("giftModal").classList.add("show");
+$("giftBox").onclick=()=>{
+$("giftBox").style.display="none";
+$("giftReveal").style.display="block";
+$("giftReveal").textContent=gift.emoji;
+$("giftDesc").textContent=`축하해요! ${gift.name} 선물을 받았어요!`;
+$("giftClose").style.display="inline-block";
+if(!state.giftsClaimed.includes(id))state.giftsClaimed.push(id);
+state.pendingGifts=state.pendingGifts.filter(x=>x!==id);
+save();
+renderGoals();
+renderCollection();
+};
 }
-$("giftClose").addEventListener("click",()=>{
-  $("giftModal").classList.remove("show");
-  if(state.pendingGifts.length){
-    setTimeout(showNextGift,250);
-  }
-});
+$("giftClose").onclick=()=>{
+$("giftModal").classList.remove("show");
+if(state.pendingGifts.length)setTimeout(showNextGift,250);
+};
 
 function serveCustomer(){
-  if(state.serving)return;
-  if(!state.currentCustomer){$("serveMessage").textContent="먼저 손님 주문을 확인해 주세요.";return;}
-  if(!state.container){
-    $("serveMessage").textContent="먼저 콘 또는 컵을 선택해 주세요!";
-    return;
-  }
-  if(!isOrderComplete()){
-    $("serveMessage").textContent="손님 주문과 담은 아이스크림을 확인해 주세요!";
-    return;
-  }
-  if(state.scoops.length===0){
-    $("serveMessage").textContent="아이스크림을 먼저 담아 주세요!";
-    return;
-  }
-
-  state.serving=true;
-  $("serveBtn").disabled=true;
-  $("nextBtn").disabled=true;
-  $("coneBtn").disabled=true;
-  $("cupBtn").disabled=true;
-  renderFlavors();
-  $("serveMessage").textContent="맛있는 아이스크림을 손님에게 건네는 중이에요! 🍦";
-
-  const flyer=$("flyDessert");
-  const rect=$("dessert").getBoundingClientRect();
-  flyer.style.left=rect.left+"px";
-  flyer.style.top=rect.top+"px";
-  flyer.style.display="block";
-  flyer.textContent=state.container==="컵"?"🥤":"🍦";
-  flyer.animate([
-    {transform:"translate(0,0) scale(1)",opacity:1},
-    {transform:"translate(90px,-25px) scale(.9)",opacity:1},
-    {transform:"translate(170px,10px) scale(.4)",opacity:0}
-  ],{duration:850,easing:"ease-in",fill:"forwards"});
-
-  const count=state.scoops.length;
-  const earned=count*SCOOP_PRICE;
-  const customerName=state.currentCustomer.name;
-  const oldLevel=state.level;
-
-  setTimeout(()=>{
-    flyer.style.display="none";
-    flyer.getAnimations().forEach(a=>a.cancel());
-    state.money+=earned;
-    state.sold+=count;
-    state.level=getLevel(state.money);
-    state.records.push({name:customerName,count,earned});
-    state.records=state.records.slice(-30);
-    checkGiftMilestones();
-    state.scoops=[];
-    state.order=[];
-    state.container="";
-    state.currentCustomer=null;
-    state.serving=false;
-
-    $("customerFace").textContent="😋";
-    $("customerName").textContent=customerName+" 냠냠!";
-    $("customerOrder").textContent="아이스크림이 정말 맛있어요!";
-    $("serveMessage").textContent=`판매 완료! ${count}스쿱 × 2,000원 = ${won(earned)} 💰`;
-    $("serveBtn").disabled=false;
-    $("nextBtn").disabled=false;
-    $("coneBtn").disabled=false;
-    $("cupBtn").disabled=false;
-
-    render();
-    save();
-
-    if(state.level>oldLevel){
-      $("serveMessage").textContent+=` 🎉 레벨 ${state.level} 달성! 새로운 맛이 열렸어요!`;
-    }
-    if(state.pendingGifts.length){
-      setTimeout(showNextGift,700);
-    }
-  },850);
+if(state.serving||!state.currentCustomer)return;
+if(!state.container){
+$("serveMessage").textContent="먼저 손님이 주문한 콘 또는 컵을 선택해 주세요!";
+return;
+}
+if(state.container!==state.requiredContainer){
+$("serveMessage").textContent=`주문 오류! 손님은 ${state.requiredContainer}을(를) 원해요.`;
+return;
+}
+if(!isOrderComplete()){
+$("serveMessage").textContent="주문한 맛과 스쿱 수를 정확히 맞춰 주세요!";
+return;
+}
+if(!state.scoops.length){
+$("serveMessage").textContent="아이스크림을 먼저 담아 주세요!";
+return;
 }
 
-$("coneBtn").addEventListener("click",()=>chooseContainer("콘"));
-$("cupBtn").addEventListener("click",()=>chooseContainer("컵"));
-$("serveBtn").addEventListener("click",serveCustomer);
-$("nextBtn").addEventListener("click",()=>{
-  if(state.serving)return;
-  newCustomer();
-});
-$("saveNameBtn").addEventListener("click",()=>{
-  const name=$("shopNameInput").value.trim();
-  if(!name){alert("가게 이름을 입력해 주세요!");return;}
-  state.shopName=name;
-  save();
-  render();
-});
+state.serving=true;
+["serveBtn","nextBtn","coneBtn","cupBtn"].forEach(id=>$(id).disabled=true);
+renderFlavors();
+$("serveMessage").textContent="아이스크림을 손님에게 건네는 중이에요! 🍦";
+
+const flyer=$("flyDessert");
+const rect=$("dessert").getBoundingClientRect();
+flyer.style.left=rect.left+"px";
+flyer.style.top=rect.top+"px";
+flyer.style.display="block";
+flyer.textContent=state.container==="컵"?"🥤":"🍦";
+flyer.animate([
+{transform:"translate(0,0) scale(1)",opacity:1},
+{transform:"translate(70px,-25px) scale(.9)",opacity:1},
+{transform:"translate(150px,10px) scale(.3)",opacity:0}
+],{duration:850,easing:"ease-in",fill:"forwards"});
+
+const count=state.scoops.length;
+const earned=count*SCOOP_PRICE;
+const customerName=state.currentCustomer.name;
+const oldLevel=state.level;
+
+setTimeout(()=>{
+flyer.style.display="none";
+flyer.getAnimations().forEach(a=>a.cancel());
+state.money+=earned;
+state.sold+=count;
+state.level=getLevel(state.money);
+state.records.push({name:customerName,count,earned});
+state.records=state.records.slice(-30);
+checkGiftMilestones();
+state.scoops=[];
+state.order=[];
+state.container="";
+state.currentCustomer=null;
+state.serving=false;
+
+$("customerFace").textContent="😋";
+$("customerName").textContent=customerName+" 냠냠!";
+$("customerOrder").textContent="맛있게 먹었어요!";
+$("orderContainer").textContent="판매 완료! 🎉";
+$("orderDetails").textContent=`${count}스쿱 판매 · ${won(earned)} 획득`;
+$("serveMessage").textContent=`판매 완료! ${count}스쿱 × 2,000원 = ${won(earned)} 💰`;
+["serveBtn","nextBtn","coneBtn","cupBtn"].forEach(id=>$(id).disabled=false);
+render();
+save();
+if(state.level>oldLevel){
+$("serveMessage").textContent+=` 🎉 레벨 ${state.level}! 새로운 맛이 열렸어요!`;
+}
+if(state.pendingGifts.length)setTimeout(showNextGift,600);
+},850);
+}
+
+$("coneBtn").onclick=()=>chooseContainer("콘");
+$("cupBtn").onclick=()=>chooseContainer("컵");
+$("serveBtn").onclick=serveCustomer;
+$("nextBtn").onclick=()=>{if(!state.serving)newCustomer();};
+$("saveNameBtn").onclick=()=>{
+const name=$("shopNameInput").value.trim();
+if(!name){alert("가게 이름을 입력해 주세요!");return;}
+state.shopName=name;
+save();
+render();
+};
 $("shopNameInput").addEventListener("keydown",e=>{
-  if(e.key==="Enter")$("saveNameBtn").click();
+if(e.key==="Enter")$("saveNameBtn").click();
 });
-$("resetBtn").addEventListener("click",()=>{
-  if(!confirm("정말 처음부터 다시 시작할까요? 보유 금액과 선물 기록이 모두 사라져요."))return;
-  localStorage.removeItem(SAVE_KEY);
-  state=freshState();
-  $("giftModal").classList.remove("show");
-  render();
-  newCustomer();
-});
+$("resetBtn").onclick=()=>{
+if(!confirm("처음부터 다시 시작할까요? 보유 금액과 선물 기록이 사라져요."))return;
+localStorage.removeItem(SAVE_KEY);
+state=freshState();
+$("giftModal").classList.remove("show");
+render();
+newCustomer();
+};
 
 render();
 newCustomer();
-})();
 </script>
 </body>
 </html>
